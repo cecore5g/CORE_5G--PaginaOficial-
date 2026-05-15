@@ -1,12 +1,429 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRENTE ESTUDIANTIL CORE 5G</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CORE 5G - Frente Estudiantil</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+      background:#0f0f16;
+      color:white;
+      line-height:1.6;
+    }
+
+    :root{
+      --morado:#6A0DAD;
+      --naranja:#ff7a00;
+      --gris:#1b1b26;
+    }
+
+    header{
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        padding:40px;
+
+        background:
+        linear-gradient(
+          rgba(106,13,173,0.75),
+          rgba(15,15,22,0.92)
+        ),
+        linear-gradient(
+           135deg,
+          rgba(255,122,0,0.55),
+          rgba(106,13,173,0.45)
+        ),
+        url("imagenes/045.jpg");
+
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+
+    .hero{
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:5rem;
+      color:var(--naranja);
+      font-weight:800;
+      letter-spacing:3px;
+    }
+
+    .hero h2{
+      color:white;
+      font-size:2rem;
+      margin-bottom:20px;
+    }
+
+    .logo{
+        width: 500px;
+        padding-bottom: -25px;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      opacity:.9;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:14px 35px;
+      background:var(--naranja);
+      color:white;
+      text-decoration:none;
+      border-radius:12px;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:var(--morado);
+      transform:translateY(-3px);
+    }
+
+    section{
+      padding:90px 10%;
+    }
+
+    .section-title{
+      font-size:2.5rem;
+      color:var(--naranja);
+      margin-bottom:30px;
+      text-align:center;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .card{
+      background:var(--gris);
+      padding:30px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:var(--naranja);
+    }
+
+    .card h3{
+      color:var(--naranja);
+      margin-bottom:15px;
+    }
+
+    .vision-mision{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .box{
+      background:var(--gris);
+      padding:40px;
+      border-radius:20px;
+      border-left:6px solid var(--naranja);
+    }
+
+    .box h3{
+      margin-bottom:15px;
+      color:var(--naranja);
+      font-size:1.8rem;
+    }
+
+    .why{
+      background:linear-gradient(135deg,var(--morado),#1b1b26);
+      border-radius:30px;
+      text-align:center;
+    }
+
+    .why p{
+      max-width:850px;
+      margin:auto;
+      font-size:1.15rem;
+    }
+
+    form{
+      max-width:700px;
+      margin:auto;
+      background:var(--gris);
+      padding:40px;
+      border-radius:25px;
+    }
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:12px;
+      background:#2a2a38;
+      color:white;
+      font-size:1rem;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:none;
+    }
+
+    button{
+      width:100%;
+      padding:15px;
+      border:none;
+      background:var(--naranja);
+      color:white;
+      font-size:1rem;
+      font-weight:bold;
+      border-radius:12px;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    button:hover{
+      background:var(--morado);
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#0b0b11;
+      opacity:.8;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .hero h2{
+        font-size:1.3rem;
+      }
+
+    }
+
+  </style>
 </head>
 <body>
-    BIENVENIDO A LA PAGINA OFICIAL DEL FRENTE ESTUDIANIL CORE 5G AQUI TE COMPARTIREMOS PARTE DE NUESTRAS PROPUESTA PLAN DE TRABAJO Y OTRAS COSAS MAS QUE SEAN DE TU INTERES
-    
+
+  <!-- HERO -->
+  <header>
+    <div class="hero">
+        <img class="logo" src="Imagenes/logo 1.png" alt="logo">
+      <h2> RUMBO AL CENTRO DE ESTUDIANTES 2026 - 2029 <br> SIS DAD TEL CIC CIB </h2>
+
+      <p>
+        Innovación, liderazgo y compromiso para transformar
+        la experiencia estudiantil con propuestas reales y
+        enfocadas en el futuro tecnológico.
+      </p>
+
+      <a href="#propuestas" class="btn">
+        Ver Propuestas
+      </a>
+    </div>
+  </header>
+
+  <!-- MISION Y VISION -->
+  <section>
+
+    <h2 class="section-title">
+      Misión y Visión
+    </h2>
+
+    <div class="vision-mision">
+
+      <div class="box">
+        <h3>Misión</h3>
+
+        <p>
+          Representar a los estudiantes del área de tecnología
+          promoviendo innovación, inclusión y oportunidades
+          académicas que fortalezcan el crecimiento profesional
+          y personal de toda la comunidad estudiantil.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Visión</h3>
+
+        <p>
+          Convertirnos en el frente estudiantil referente en
+          liderazgo tecnológico, impulsando proyectos modernos,
+          espacios de participación y mejoras reales para todos
+          los estudiantes.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- POR QUE VOTAR -->
+  <section class="why">
+
+    <h2 class="section-title">
+      ¿Por qué votar por CORE 5G?
+    </h2>
+
+    <p>
+      CORE 5G nace con la idea de modernizar la representación
+      estudiantil mediante propuestas tecnológicas, transparencia,
+      participación activa y trabajo en equipo. Nuestro compromiso
+      es escuchar a cada estudiante y convertir sus necesidades
+      en soluciones reales que impulsen el desarrollo académico
+      y profesional.
+    </p>
+
+  </section>
+
+  <!-- PROPUESTAS -->
+  <section id="propuestas">
+
+    <h2 class="section-title">
+      Nuestras Propuestas
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Laboratorios Modernos</h3>
+
+        <p>
+          Gestión para mejorar los laboratorios y equipos
+          tecnológicos para prácticas más completas.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Capacitaciones</h3>
+
+        <p>
+          Talleres y cursos certificados en diseño,
+          programación, IA y herramientas digitales.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Eventos Tecnológicos</h3>
+
+        <p>
+          Organización de hackathons, ferias tecnológicas
+          y competencias estudiantiles.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Bolsa de Trabajo</h3>
+
+        <p>
+          Crear alianzas con empresas para prácticas,
+          pasantías y oportunidades laborales.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BUZON -->
+  <section>
+
+    <h2 class="section-title">
+      Buzón de Quejas y Sugerencias
+    </h2>
+
+    <form id="feedbackForm">
+
+      <div class="input-group">
+        <input type="text" name="nombre" placeholder="Tu nombre">
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" placeholder="Tu correo">
+      </div>
+
+      <div class="input-group">
+        <textarea
+          name="mensaje"
+          placeholder="Escribe tu sugerencia o queja..."
+        ></textarea>
+      </div>
+
+      <button type="submit">
+        Enviar Mensaje
+      </button>
+
+    </form>
+
+  </section>
+
+  <footer>
+    © 2026 CORE 5G - Frente Estudiantil Tecnología
+  </footer>
+
+  <script>
+    const form = document.getElementById("feedbackForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+        nombre: form.nombre.value,
+        email: form.email.value,
+        mensaje: form.mensaje.value
+      };
+
+      try {
+
+        // REEMPLAZA ESTA URL CON TU WEBHOOK DE MAKE
+        const response = await fetch(
+          "https://hook.us1.make.com/TU_WEBHOOK",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type":"application/json"
+            },
+            body: JSON.stringify(data)
+          }
+        );
+
+        if(response.ok){
+          alert("Mensaje enviado correctamente");
+          form.reset();
+        }else{
+          alert("Error al enviar");
+        }
+
+      } catch(error){
+        alert("Ocurrió un error");
+      }
+
+    });
+  </script>
+
 </body>
 </html>
