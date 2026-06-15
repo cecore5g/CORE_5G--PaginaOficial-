@@ -26,28 +26,28 @@
     }
 
     header{
-        min-height:100vh;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
-        padding:40px;
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px;
 
-        background:
-        linear-gradient(
-          rgba(106,13,173,0.75),
-          rgba(15,15,22,0.92)
-        ),
-        linear-gradient(
-           135deg,
-          rgba(255,122,0,0.55),
-          rgba(106,13,173,0.45)
-        ),
-        url("./Imagenes/045.jpg");
+      background:
+      linear-gradient(
+        rgba(106,13,173,0.75),
+        rgba(15,15,22,0.92)
+      ),
+      linear-gradient(
+        135deg,
+        rgba(255,122,0,0.55),
+        rgba(106,13,173,0.45)
+      ),
+      url("./Imagenes/045.jpg");
 
-        background-size:cover;
-        background-position:center;
-        background-repeat:no-repeat;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
     }
 
     .hero{
@@ -68,43 +68,50 @@
     }
 
     .navbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(15,15,22,.95);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 8%;
-    z-index: 9999;
-    border-bottom: 2px solid rgba(255,122,0,.2);
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15,15,22,.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 8%;
+      z-index: 9999;
+      border-bottom: 2px solid rgba(255,122,0,.2);
+    }
 
-.logo-nav img{
+  .menu-toggle{
+    display:none;
+    font-size:2rem;
+    color:white;
+    cursor:pointer;
+  }
+
+  .logo-nav img{
     height: 60px;
-}
+  }
 
-.nav-links{
+  .nav-links{
     display: flex;
     list-style: none;
     gap: 30px;
-}
+  }
 
-.nav-links a{
+  .nav-links a{
     text-decoration: none;
     color: white;
     font-weight: 600;
     transition: .3s;
     position: relative;
-}
+  }
 
-.nav-links a:hover{
+  .nav-links a:hover{
     color: #ff7a00;
-}
+  }
 
-.nav-links a::after{
+  .nav-links a::after{
     content: "";
     position: absolute;
     left: 0;
@@ -113,49 +120,51 @@
     height: 2px;
     background: #ff7a00;
     transition: .3s;
-}
+  }
 
-.nav-links a:hover::after{
+  .nav-links a:hover::after{
     width: 100%;
-}
+  }
 
-    .logo{
-        width: 500px;
-        padding-bottom: -25px;
-    }
+  .logo{
+    width: 500px;
+    padding-bottom: -25px;
+  }
 
-    .carreras{
-        width: 400px;
-    }
+  .carreras{
+    width: 400px;
+  }
 
-    .hero p{
-      font-size:1.2rem;
-      opacity:.9;
-    }
+  .hero p{
+    font-size:1.2rem;
+    opacity:.9;
+  }
 
-    .btn{
-      display:inline-block;
-      margin-top:30px;
-      padding:14px 35px;
-      background:var(--naranja);
-      color:white;
-      text-decoration:none;
-      border-radius:12px;
-      font-weight:bold;
-      transition:.3s;
-    }
+    
 
-    .btn:hover{
-      background:var(--morado);
-      transform:translateY(-3px);
-    }
+  .btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 35px;
+    background:var(--naranja);
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+  }
 
-    section{
+  .btn:hover{
+    background:var(--morado);
+    transform:translateY(-3px);
+  }
+
+  section{
     padding:20px 10%;
     position:relative;
-}
+  } 
 
-section:not(:first-of-type)::before{
+  section:not(:first-of-type)::before{
     content:"";
     position:absolute;
     top:0;
@@ -169,21 +178,21 @@ section:not(:first-of-type)::before{
         var(--naranja),
         transparent
     );
-}
+  }
 
-    .section-title{
+  .section-title{
       font-size:2.5rem;
       color:var(--naranja);
       margin-bottom:30px;
       text-align:center;
-    }
+  }
 
-    .cards{
+  .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:25px;
       margin-top:40px;
-    }
+  }
 
     .card{
       background:var(--gris);
@@ -418,10 +427,10 @@ section:not(:first-of-type)::before{
       opacity:.8;
     }
 
-    @media (max-width: 768px){
+  @media (max-width: 768px){
 
   header{
-    padding:30px 20px;
+    padding-top: 100px;
     min-height:60vh;
   }
 
@@ -435,6 +444,59 @@ section:not(:first-of-type)::before{
     height:auto;
     margin-bottom:10px;
   }
+
+  .navbar{
+    padding:12px 20px;
+}
+
+.logo-nav img{
+    height:40px;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-links{
+    position:absolute;
+    top:75px;
+    left:0;
+    width:100%;
+    background:#111;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    padding:0px 0;
+
+    max-height:0;
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.nav-links.active{
+    max-height:400px;
+}
+
+.nav-links li{
+    width:100%;
+    text-align:center;
+}
+
+form{
+    padding:20px;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+.nav-links a{
+    display:block;
+    padding:10px;
+}
+
+  
 
   .carreras{
         width: 250px;
@@ -510,6 +572,16 @@ section:not(:first-of-type)::before{
     padding:50px 20px;
   }
 
+  .formato-card{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+}
+
+.btn-descargar{
+    width:100%;
+}
+
   .why p{
     font-size:1rem;
   }
@@ -559,13 +631,17 @@ section:not(:first-of-type)::before{
       </a>
     </div>
   </header>
-  <nav class="navbar" >
+  <nav class="navbar">
 
-    <div class="logo-nav">
+    <div class="logo-nav" id="logo-nav">
         <img src="Imagenes/logo 3.png" alt="CORE 5G">
     </div>
 
-    <ul class="nav-links">
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
         <li><a href="#Inicio">Inicio</a></li>
         <li><a href="contactos.html">Integrantes</a></li>
         <li><a href="#Formatos">Formatos</a></li>
@@ -749,6 +825,19 @@ buscador.addEventListener("input", () => {
 });
 
 resultados.innerHTML = "";
+
+</script>
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
 
 </script>
 
