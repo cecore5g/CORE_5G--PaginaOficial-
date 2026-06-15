@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CORE 5G - Frente Estudiantil</title>
+  <title>CORE 5G - CENTRO DE ESTUDIANTES</title>
 
   <style>
     *{
@@ -69,18 +69,18 @@
 
     .navbar{
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(15,15,22,.95);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 8%;
-      z-index: 9999;
-      border-bottom: 2px solid rgba(255,122,0,.2);
-    }
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15,15,22,.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8%;
+  z-index: 9999;
+  border-bottom: 2px solid rgba(255,122,0,.2);
+}
 
   .menu-toggle{
     display:none;
@@ -427,6 +427,17 @@
       opacity:.8;
     }
 
+    .redes-sociales{
+    width:90%;
+    margin:30px auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
   @media (max-width: 768px){
 
   header{
@@ -580,6 +591,10 @@ form{
 
 .btn-descargar{
     width:100%;
+}
+
+.nombres{
+  font-size: 1,5rem;
 }
 
   .why p{
@@ -802,7 +817,7 @@ function mostrarResultados(texto = ""){
         
         <div class="formato-card">
 
-            <h3>${formato.nombre}</h3>
+            <h3 id="nombres ">${formato.nombre}</h3>
 
             <a href="${formato.link}"
                target="_blank"

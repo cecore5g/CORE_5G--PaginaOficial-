@@ -30,6 +30,47 @@ header{
     padding:60px 20px;
 }
 
+.titulo-integrantes{
+    text-align:center;
+    color:var(--naranja);
+    font-size:2rem;
+    margin-bottom:35px;
+}
+
+.contactos{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+    padding:30px 0;
+}
+
+.social-link{
+    width:65px;
+    height:65px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#1b1b26;
+    border-radius:15px;
+    transition:.3s;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.social-link:hover{
+    transform:translateY(-5px) scale(1.08);
+    border-color:#ff7a00;
+    box-shadow:0 0 20px rgba(255,122,0,.3);
+}
+
+.social-link img{
+    width:32px;
+    height:32px;
+    filter:invert(1);
+}
+
+
 header h1{
     color:var(--naranja);
     font-size:3rem;
@@ -56,20 +97,61 @@ header p{
     background:var(--morado);
 }
 
+.redes {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.social-link{
+    width:65px;
+    height:65px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--gris);
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+#contenedorIntegrantes{
+    width:90%;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.social-link:hover{
+    transform:translateY(-5px);
+    border-color:var(--naranja);
+    box-shadow:0 0 20px rgba(255,122,0,.25);
+}
+
+.social-link img{
+    width:30px;
+    height:30px;
+    object-fit:contain;
+    filter:invert(1);
+}
+
 .tarjeta{
-    width: 200px;
     background:var(--gris);
     border-radius:20px;
     overflow:hidden;
-    text-align:center;
     border:1px solid rgba(255,255,255,.08);
     transition:.3s;
-    /* Centrado */
-    display:flex;
-    flex-direction:column;
-    align-items:center;
     text-align:center;
+}
 
+.tarjeta:hover{
+    transform:translateY(-8px);
+    border-color:var(--naranja);
 }
 
 #contenedorIntegrantes{
@@ -94,14 +176,11 @@ header p{
     margin-top:15px;
 }
 
-.tarjeta:hover{
-    transform:translateY(-8px);
-    border-color:var(--naranja);
-}
+
 
 .tarjeta img{
     width:100%;
-    height:200px;
+    height:280px;
     object-fit:cover;
 }
 
@@ -111,11 +190,13 @@ header p{
 
 .info h3{
     color:var(--naranja);
-    margin-bottom:10px;
+    margin-bottom:8px;
+    font-size:1.2rem;
 }
 
 .info p{
     margin-bottom:15px;
+    opacity:.9;
 }
 
 .contactos{
@@ -193,6 +274,99 @@ footer{
     opacity:.8;
 }
 
+    .contactos{
+        gap:15px;
+    }
+
+    .social-link{
+        width:55px;
+        height:55px;
+    }
+
+    .social-link img{
+        width:28px;
+        height:28px;
+    }
+
+    @media (max-width:768px){
+
+    header{
+        padding:40px 15px;
+    }
+
+    header h1{
+       font-size: 1.5rem; /* 👈 aquí controlas el tamaño */
+        line-height: 1.2;
+    }
+
+    header p{
+        font-size:.95rem;
+        max-width:500px;
+        margin:auto;
+    }
+
+    .info{
+        padding: 10px ;
+    }
+
+    .info h3{
+         font-size: .80rem;
+        line-height: 1.2;
+        word-break: break-word;
+         }
+
+.info p{
+  font-size: 0.60rem;
+  opacity: .9;
+  word-break: break-word;
+}
+
+.btn{
+  font-size: 0.6rem;
+  padding: 5px 7px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+    .social-link{
+        width:55px;
+        height:55px;
+    }
+
+    .social-link img{
+        width:25px;
+        height:25px;
+    }
+
+    #contenedorIntegrantes{
+        width:40%;
+        grid-template-columns:1fr;
+    }
+
+    .tarjeta img{
+        height:100px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    footer{
+        font-size:.60rem;
+    }
+    #contenedorIntegrantes{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    }
+    }
+ 
+
+
+
 </style>
 
 </head>
@@ -200,70 +374,64 @@ footer{
 
 <header>
 
-    <h1>Contactos Oficiales</h1>
+    <h1 id="titulo ">Contactos Oficiales</h1>
 
     <p>
         Comunícate con el Centro de Estudiantes CORE 5G mediante nuestros canales oficiales.
     </p>
 
+    <section class="redes">
+
+    <a href="https://www.tiktok.com/@c.e.core5g?_r=1&_t=ZS-97Exkpj0nvI"
+       target="_blank"
+       class="social-link">
+
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
+
+    </a>
+
+    <a href="https://www.facebook.com/share/1H1dF7AqhR/"
+       target="_blank"
+       class="social-link">
+
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+
+    </a>
+
+    <a href="https://www.instagram.com/c.e.core5g?igsh=emJoaWkwdHhoa25j"
+       target="_blank"
+       class="social-link">
+
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+
+    </a>
+
+    <a href="mailto:c.e.core5g@gmail.com"
+       class="social-link">
+
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Correo">
+
+    </a>
+
+    </section>
+
     <a href="index.html" class="btn-volver">
         ← Volver al Inicio
     </a>
+
+    </section>
 
 </header>
 
 <section>
 
-    <h2 style="text-align:center; color:#ff7a00; margin-bottom:30px;">
-        Integrantes del Centro de Estudiantes
-    </h2>
+  <h2 style="text-align:center; color:#ff7a00; margin-bottom:30px;">
+    Integrantes
+  </h2>
 
-    <div id="contenedorIntegrantes" class="contactos">
-    </div>
-
-</section>
-
-<section class="contactos">
-
-    <div class="card">
-        <div class="icono">📱</div>
-        <h3>Tik Tok</h3>
-        <p>Visita nuestro perfil y mantente informado</p>
-
-        <a href="https://www.tiktok.com/@c.e.core5g?_r=1&_t=ZS-97Exkpj0nvI" target="_blank" class="btn whatsapp">
-            Abrir WhatsApp
-        </a>
-    </div>
-
-    <div class="card">
-        <div class="icono">📘</div>
-        <h3>Facebook</h3>
-        <p>Sigue nuestras actividades y comunicados.</p>
-
-        <a href="https://www.facebook.com/share/1H1dF7AqhR/" target="_blank" class="btn facebook">
-            Ir a Facebook
-        </a>
-    </div>
-
-    <div class="card">
-        <div class="icono">📸</div>
-        <h3>Instagram</h3>
-        <p>Galerías, historias y contenido institucional.</p>
-
-        <a href="https://www.instagram.com/c.e.core5g?igsh=emJoaWkwdHhoa25j" target="_blank" class="btn instagram">
-            Ir a Instagram
-        </a>
-    </div>
-
-    <div class="card">
-        <div class="icono">✉️</div>
-        <h3>Correo Electrónico</h3>
-        <p>Envíanos solicitudes y consultas formales.</p>
-
-        <a href="mailto:c.e.core5g@gmail.com" class="btn email">
-            Enviar Correo
-        </a>
-    </div>
+  <div id="contenedorIntegrantes">
+    <!-- aquí van las tarjetas -->
+  </div>
 
 </section>
 
@@ -277,10 +445,6 @@ footer{
 console.log("HTML cargado");
 console.log(typeof integrantes);
 </script>
-
-<script src="js/integrantes.js"></script>
-
-<script src="js/integrantes.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
