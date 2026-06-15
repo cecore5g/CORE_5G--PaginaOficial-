@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contactos - Centro de Estudiantes CORE 5G</title>
+
+<style>
+
+:root{
+    --morado:#6A0DAD;
+    --naranja:#ff7a00;
+    --gris:#1b1b26;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#0f0f16;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    color:var(--naranja);
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    opacity:.8;
+}
+
+.btn-volver{
+    display:inline-block;
+    margin-top:25px;
+    background:var(--naranja);
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-volver:hover{
+    background:var(--morado);
+}
+
+.tarjeta{
+    width: 200px;
+    background:var(--gris);
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+    /* Centrado */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+}
+
+#contenedorIntegrantes{
+    width: 90%;
+    margin: 0 auto; /* centra el div */
+}
+
+#contenedorIntegrantes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
+    justify-content: center; /* centra las columnas */
+    gap: 20px;
+}
+
+
+
+.botones{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap: 5px;
+    margin-top:15px;
+}
+
+.tarjeta:hover{
+    transform:translateY(-8px);
+    border-color:var(--naranja);
+}
+
+.tarjeta img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+}
+
+.info h3{
+    color:var(--naranja);
+    margin-bottom:10px;
+}
+
+.info p{
+    margin-bottom:15px;
+}
+
+.contactos{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding-bottom:60px;
+}
+
+.card{
+    background:var(--gris);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:var(--naranja);
+}
+
+.icono{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:var(--naranja);
+    margin-bottom:10px;
+}
+
+.card p{
+    margin-bottom:20px;
+    opacity:.9;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.instagram{
+    background:#E4405F;
+}
+
+.email{
+    background:#EA4335;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0b0b11;
+    opacity:.8;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+    <h1>Contactos Oficiales</h1>
+
+    <p>
+        Comunícate con el Centro de Estudiantes CORE 5G mediante nuestros canales oficiales.
+    </p>
+
+    <a href="index.html" class="btn-volver">
+        ← Volver al Inicio
+    </a>
+
+</header>
+
+<section>
+
+    <h2 style="text-align:center; color:#ff7a00; margin-bottom:30px;">
+        Integrantes del Centro de Estudiantes
+    </h2>
+
+    <div id="contenedorIntegrantes" class="contactos">
+    </div>
+
+</section>
+
+<section class="contactos">
+
+    <div class="card">
+        <div class="icono">📱</div>
+        <h3>Tik Tok</h3>
+        <p>Visita nuestro perfil y mantente informado</p>
+
+        <a href="https://www.tiktok.com/@c.e.core5g?_r=1&_t=ZS-97Exkpj0nvI" target="_blank" class="btn whatsapp">
+            Abrir WhatsApp
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="icono">📘</div>
+        <h3>Facebook</h3>
+        <p>Sigue nuestras actividades y comunicados.</p>
+
+        <a href="https://www.facebook.com/share/1H1dF7AqhR/" target="_blank" class="btn facebook">
+            Ir a Facebook
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="icono">📸</div>
+        <h3>Instagram</h3>
+        <p>Galerías, historias y contenido institucional.</p>
+
+        <a href="https://www.instagram.com/c.e.core5g?igsh=emJoaWkwdHhoa25j" target="_blank" class="btn instagram">
+            Ir a Instagram
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="icono">✉️</div>
+        <h3>Correo Electrónico</h3>
+        <p>Envíanos solicitudes y consultas formales.</p>
+
+        <a href="mailto:c.e.core5g@gmail.com" class="btn email">
+            Enviar Correo
+        </a>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 CENTRO DE ESTUDIANTES CORE 5G
+</footer>
+
+<script src="integrantes.js"></script>
+
+<script>
+console.log("HTML cargado");
+console.log(typeof integrantes);
+</script>
+
+<script src="js/integrantes.js"></script>
+
+<script src="js/integrantes.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const contenedor = document.getElementById("contenedorIntegrantes");
+
+    if (!contenedor) {
+        console.error("No existe el contenedor");
+        return;
+    }
+
+    if (typeof integrantes === "undefined") {
+        console.error("No se cargó integrantes.js");
+        return;
+    }
+
+    integrantes.forEach(persona => {
+
+        contenedor.insertAdjacentHTML("beforeend", `
+            <div class="tarjeta">
+
+                <img src="${persona.foto}" alt="${persona.nombre}">
+
+                <div class="info">
+
+                    <h3>${persona.nombre}</h3>
+
+                    <p>${persona.cargo}</p>
+
+                    <div class="botones">
+
+                        <a href="https://wa.me/${persona.whatsapp}"
+                        target="_blank"
+                        class="btn whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        `);
+
+    });
+
+});
+</script>
+
+</body>
+</html>

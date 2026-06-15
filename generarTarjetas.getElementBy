@@ -1,0 +1,55 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+    const contenedor = document.getElementById("contenedorIntegrantes");
+
+    if (!contenedor) {
+        console.error("No existe #contenedorIntegrantes");
+        return;
+    }
+
+    if (typeof integrantes === "undefined") {
+        console.error("No se encontró el array integrantes");
+        return;
+    }
+
+    integrantes.forEach(persona => {
+
+        const tarjeta = document.createElement("div");
+        tarjeta.classList.add("tarjeta");
+
+        tarjeta.innerHTML = `
+            <img src="${persona.foto}" alt="${persona.nombre}">
+
+            <div class="info">
+                <h3>${persona.nombre}</h3>
+                <p>${persona.cargo}</p>
+
+                <div class="botones">
+
+                    ${
+                        persona.whatsapp
+                        ? `<a href="https://wa.me/${persona.whatsapp}" target="_blank" class="btn whatsapp">WhatsApp</a>`
+                        : ""
+                    }
+
+                    ${
+                        persona.facebook
+                        ? `<a href="${persona.facebook}" target="_blank" class="btn facebook">Facebook</a>`
+                        : ""
+                    }
+
+                    ${
+                        persona.correo
+                        ? `<a href="mailto:${persona.correo}" class="btn correo">Correo</a>`
+                        : ""
+                    }
+
+                </div>
+            </div>
+        `;
+
+        contenedor.appendChild(tarjeta);
+
+    });
+
+});

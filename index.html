@@ -67,6 +67,58 @@
       margin-bottom:20px;
     }
 
+    .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15,15,22,.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 8%;
+    z-index: 9999;
+    border-bottom: 2px solid rgba(255,122,0,.2);
+}
+
+.logo-nav img{
+    height: 60px;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: .3s;
+    position: relative;
+}
+
+.nav-links a:hover{
+    color: #ff7a00;
+}
+
+.nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #ff7a00;
+    transition: .3s;
+}
+
+.nav-links a:hover::after{
+    width: 100%;
+}
+
     .logo{
         width: 500px;
         padding-bottom: -25px;
@@ -99,8 +151,25 @@
     }
 
     section{
-      padding:90px 10%;
-    }
+    padding:20px 10%;
+    position:relative;
+}
+
+section:not(:first-of-type)::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:150px;
+    height:2px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--naranja),
+        transparent
+    );
+}
 
     .section-title{
       font-size:2.5rem;
@@ -153,6 +222,85 @@
       font-size:1.8rem;
     }
 
+    #buscarFormato{
+    width: 100%;
+    max-width: 700px;
+    padding: 16px 20px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background: #1b1b26;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all .3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,.25);
+}
+
+#resultadosFormatos{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+    display:grid;
+    gap:15px;
+}
+
+.formato-card{
+    background:#1b1b26;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.formato-card h3{
+    color:white;
+}
+
+.btn-descargar{
+    background:#ff7a00;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.btn-descargar:hover{
+    opacity:.9;
+}
+
+#buscarFormato::placeholder{
+    color: rgba(255,255,255,.6);
+}
+
+#buscarFormato:focus{
+    border-color: #ff7a00;
+    box-shadow:
+        0 0 15px rgba(255,122,0,.4),
+        0 0 30px rgba(255,122,0,.15);
+    transform: translateY(-2px);
+}
+
+#buscarFormato{
+    display: block;
+    margin: 0 auto;
+}
+
+#buscarFormato{
+    width: 80%;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+}
+
+.buscador{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
     .why{
       background:linear-gradient(135deg,var(--morado),#1b1b26);
       border-radius:30px;
@@ -188,10 +336,63 @@
       font-size:1rem;
     }
 
+    .tarjeta{
+    background: var(--gris);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.08);
+    transition: .3s;
+}
+
+.tarjeta:hover{
+    transform: translateY(-8px);
+    border-color: var(--naranja);
+}
+
+.tarjeta img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+}
+
+.info h3{
+    color:var(--naranja);
+    margin-bottom:10px;
+}
+
+.info p{
+    margin-bottom:15px;
+    opacity:.9;
+}
+
+.botones{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-top:15px;
+}
+
+.email{
+    background:#EA4335;
+}
+
     textarea{
       min-height:150px;
       resize:none;
     }
+
+    .descripcion-formatos{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.85);
+}
 
     button{
       width:100%;
@@ -334,6 +535,8 @@
     padding:20px;
   }
 
+
+
 }
 
   </style>
@@ -342,9 +545,8 @@
 
   <!-- HERO -->
   <header>
-    <div class="hero">
-        <img class="logo" src="Imagenes/logo 1.png" alt="logo">
-      <h2> RUMBO AL CENTRO DE ESTUDIANTES 2026 - 2029 <br> <img class="carreras" src="Imagenes/carreras.png" alt="carreras"> </h2>
+    <div class="hero" id="Inicio">
+      <h2> CENTRO DE ESTUDIANTES 2026 - 2029 <br> <img class="carreras" src="Imagenes/carreras.png" alt="carreras"> </h2>
 
       <p>
         Innovación, liderazgo y compromiso para transformar
@@ -352,149 +554,51 @@
         enfocadas en el futuro tecnológico.
       </p>
 
-      <a href="#propuestas" class="btn">
-        Ver Propuestas
+      <a href="contactos.html" class="btn">
+        Contáctanos
       </a>
     </div>
   </header>
+  <nav class="navbar" >
 
-  <!-- MISION Y VISION -->
-  <section>
-
-    <h2 class="section-title">
-      Misión y Visión
-    </h2>
-
-    <div class="vision-mision">
-
-      <div class="box">
-        <h3>Misión</h3>
-
-        <p>
-          Representar y servir con transparencia a toda la comunidad estudiantil, impulsando el desarrollo integral de los estudiantes a través de actividades académicas, culturales y deportivas de alto nivel. Nos comprometemos a mejorar continuamente la infraestructura, fomentar la innovación tecnológica y mantener canales de comunicación abiertos y eficientes que resuelvan las necesidades de cada estudiante.
-        </p>
-      </div>
-
-      <div class="box">
-        <h3>Visión</h3>
-
-        <p>
-          Ser un Centro de Estudiantes líder, inclusivo y moderno, que transforme nuestra facultad en un referente de excelencia académica y bienestar estudiantil, preparando a la comunidad universitaria para los desafíos profesionales del futuro.
-        </p>
-      </div>
-
+    <div class="logo-nav">
+        <img src="Imagenes/logo 3.png" alt="CORE 5G">
     </div>
 
-  </section>
+    <ul class="nav-links">
+        <li><a href="#Inicio">Inicio</a></li>
+        <li><a href="contactos.html">Integrantes</a></li>
+        <li><a href="#Formatos">Formatos</a></li>
+        <li><a href="#buzon">Buzón</a></li>
+    </ul>
 
-  <!-- POR QUE VOTAR -->
-  <section class="why">
+</nav>
 
-    <h2 class="section-title">
-      ¿Por qué votar por CORE 5G?
+<section>
+<h2 class="section-title" id="Formatos" >
+      Buscador de Cartas
     </h2>
-
-    <p>
-      Cero "lag" en tus trámites y 100% de apoyo en tus materias.  Con CORE 5G, las soluciones son en tiempo real porque entendemos tus necesidades. ¡Vota por la innovación, vota por CORE 5G
+    <p class="descripcion-formatos">Aqui podras buscar y descargar los formatos de cartas que necesites
+    
     </p>
 
-  </section>
+  <div class="search-box">
+    
+    <input
+        type="text"
+        id="buscarFormato"
+        placeholder="Buscar formato..."
+    >
+  </div>
+  <div id="resultadosFormatos"></div>
 
-  <!-- PROPUESTAS -->
-  <section id="propuestas">
+</section>
 
-    <h2 class="section-title">
-      Nuestras Propuestas
-    </h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>ACADÉMICO</h3>
-
-        <p>
-          <li>Competencia de proyectos (Ferias de Exposición de todas las carreras)</li>
-          <li>Concurso Académico (programación, Hackaton, CTF, etc)</li>
-          <li>Concurso de programación de colegio</li>
-          <li>Talleres y Cursos</li>
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>CULTURA Y ARTE</h3>
-
-        <p>
-          <li>Concurso de cortometrajes y dibujos</li>
-          <li>Noche de Talentos</li>
-          <li>Institucionalizar la semana facultativa</li>
-          <li>Institucionalizar el 21 de septiembre (dia de campo)</li>
-          <li>Juegos Recreativos</li>
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>INFRAESTRUCTURA</h3>
-
-        <p>
-          <li>Implementar un Gimnasio</li>
-          <li>Requipación de la cafetería</li>
-          <li>Seguimiento al mantenimiento de los laboratorios</li>
-          <li>Equipación de áreas de descanso (Bancos y enchufes en los pasillos)</li>
-          <li>Renovar aros de Basketbol</li>
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>DEPORTES</h3>
-
-        <p>
-          <li>Sustolimpiadas (LIGAR CHOTA)</li>
-          <li>Concurso de 1ros Semestres</li>
-          <li>Diversificar o extender las disciplinas olimpicas</li>
-          <li>Campeonato instirucional (cada docente con su equipo)</li>
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>INTERACCIÓN</h3>
-
-        <p>
-          <li>Viajes de Interacción a empresas nacionales</li>
-      
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>GENERAL</h3>
-
-        <p>
-          <li>Buzon de quejas sugerencias y denuncias estudiantiles</li>
-          <li>Flete de Balones</li>
-          <li>Seguimiento de resolución de exámenes</li>
-        </p>
-      </div>
-
-    </div>
-
-
-  </section>
-
-  <!-- POR QUE VOTAR -->
-  <section class="why">
-
-    <h2 class="section-title">
-      ¿Que significa CORE 5G?
-    </h2>
-
-    <p>
-      CORE 5G significa “Centro de Organización y Representación Estudiantil”.
-Es una plataforma orientada a fortalecer la comunicación, coordinación y participación de los estudiantes, representando una nueva generación de gestión y liderazgo estudiantil (“5G”).
-    </p>
-
-  </section>
+  
+  
 
   <!-- BUZON -->
-  <section>
+  <section id="buzon">
 
     <h2 class="section-title">
       Buzón de Quejas y Sugerencias
@@ -503,25 +607,86 @@ Es una plataforma orientada a fortalecer la comunicación, coordinación y parti
     <form id="feedbackForm">
 
       <div class="input-group">
-        <input type="text" name="nombre" placeholder="Tu nombre">
+        <input type="text" name="nombre" placeholder="Tu nombre (opcional)">
       </div>
 
       <div class="input-group">
-        <input type="text" name="celular" placeholder="Tu número de Whatsapp">
+        <input type="text" name="Celular" placeholder="Tu Número de Whatsapp (opcional)">
+      </div>
+
+      <div class="input-group">
+        <input type="text" name="Carrera" placeholder="Carrera" required >
+      </div>
+
+      <div class="input-group">
+        <input type="text" name="Asunto" placeholder="Asunto" required>
       </div>
 
       <div class="input-group">
         <textarea
-          name="mensaje"
+          name="Descripcion"
           placeholder="Escribe tu sugerencia o queja..."
-        ></textarea>
+        required ></textarea>
       </div>
+
+    
 
       <button type="submit">
         Enviar Mensaje
       </button>
 
     </form>
+
+    <script>
+    document.getElementById("feedbackForm").addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    const datos = {
+        nombre: formData.get("nombre"),
+        celular: formData.get("Celular"),
+        carrera: formData.get("Carrera"),
+        asunto: formData.get("Asunto"),
+        Descripcion: formData.get("Descripcion"),
+        fecha: new Date().toLocaleString()
+    };
+
+    try{
+
+        const respuesta = await fetch("https://hook.us2.make.com/5vw87tfqfy64ah9h20a3s9t1bp5pxvgs", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datos)
+        });
+
+        if(respuesta.ok){
+
+            alert("Mensaje enviado correctamente.");
+
+            this.reset();
+
+        }else{
+
+            alert("Error al enviar el mensaje.");
+
+        }
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("No se pudo conectar con el servidor.");
+
+    }
+
+    console.log("Enviando:", datos);
+
+});
+</script>
 
   </section>
 
@@ -530,54 +695,60 @@ Es una plataforma orientada a fortalecer la comunicación, coordinación y parti
     DESARROLLADO POR PASTY
   </footer>
 
- <script>
+  <script src="formatos.js"></script>
+  <script>
 
-  const form = document.getElementById("feedbackForm");
+const buscador = document.getElementById("buscarFormato");
+const resultados = document.getElementById("resultadosFormatos");
 
-  form.addEventListener("submit", async (e) => {
+function mostrarResultados(texto = ""){
 
-    e.preventDefault();
+    resultados.innerHTML = "";
 
-    const data = {
-      nombre: form.nombre.value,
-      celular: form.celular.value,
-      mensaje: form.mensaje.value
-    };
+    const filtrados = formatos.filter(formato =>
+        formato.nombre.toLowerCase().includes(texto.toLowerCase())
+    );
 
-    try {
+    if(filtrados.length === 0){
 
-      const response = await fetch(
-        "https://hook.us2.make.com/5vw87tfqfy64ah9h20a3s9t1bp5pxvgs",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        }
-      );
+        resultados.innerHTML = `
+            <p style="text-align:center;">
+                No se encontraron formatos.
+            </p>
+        `;
 
-      if (response.ok) {
-
-        alert("Mensaje enviado correctamente");
-
-        form.reset();
-
-      } else {
-
-        alert("Error al enviar el mensaje");
-
-      }
-
-    } catch (error) {
-
-      console.error(error);
-
-      alert("No se pudo conectar con el servidor");
-
+        return;
     }
 
-  });
+    filtrados.forEach(formato => {
+
+        resultados.innerHTML += `
+        
+        <div class="formato-card">
+
+            <h3>${formato.nombre}</h3>
+
+            <a href="${formato.link}"
+               target="_blank"
+               class="btn-descargar">
+
+                Descargar
+
+            </a>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+buscador.addEventListener("input", () => {
+    mostrarResultados(buscador.value);
+});
+
+resultados.innerHTML = "";
 
 </script>
 
