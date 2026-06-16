@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMATO DE CARTAS</title>
+
+    <style>
+
+        :root{
+    --morado:#6A0DAD;
+    --naranja:#ff7a00;
+    --gris:#1b1b26;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#0f0f16;
+    color:white;
+}
+        .titulo-cartas{
+    text-align:center;
+    color:var(--naranja);
+    margin-bottom:25px;
+}
+
+.buscador{
+    width:90%;
+    max-width:600px;
+    margin:0 auto 30px;
+}
+
+.buscador input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#1b1b26;
+    color:white;
+    font-size:1rem;
+    outline:none;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.contenedor-volver{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.btn-volver{
+    display:inline-block;
+    margin-top:25px;
+    background:var(--naranja);
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-volver:hover{
+    background:var(--morado);
+}
+
+.buscador input:focus{
+    border-color:var(--naranja);
+}
+
+
+
+#resultadosFormatos{
+    width: min(1200px, 90%);
+    margin: 20px auto;
+
+    display: grid;
+
+    /* Se crean automáticamente 2, 3 o más columnas según el espacio */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+#contenedorCartas{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+
+.formato-card{
+     width: 100%;
+    max-width: 350px;
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+
+    background: #1b1b26;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 15px;
+    padding: 20px;
+    gap: 15px;
+}
+
+.categoria-bloque{
+    width: 100%;
+}
+
+.titulo-categoria{
+    color: var(--naranja);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grupo-categoria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.formato-card h3{
+    margin: 0;
+    font-size: 1rem;
+    color: #fff8f8;
+}
+
+.btn-descargar{
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.btn-descargar:hover{
+    background: #0056b3;
+}
+
+
+
+.carta{
+    background:#1b1b26;
+    border-radius:18px;
+    padding:20px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.carta:hover{
+    transform:translateY(-5px);
+    border-color:var(--naranja);
+}
+
+.carta h3{
+    color:var(--naranja);
+    margin-bottom:10px;
+}
+
+.carta p{
+    opacity:.8;
+    margin-bottom:15px;
+}
+
+.btn-carta{
+    display:inline-block;
+    background:var(--naranja);
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.btn-carta:hover{
+    background:var(--morado);
+}
+
+/* =========================
+   RESPONSIVE PARA MÓVIL
+========================= */
+@media (max-width: 768px){
+
+    .grupo-categoria{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+    }
+
+    .formato-card{
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #resultadosFormatos{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+    }
+
+    
+
+.formato-card{
+    width: 100%;
+        padding: 12px;
+
+        /* Mantener horizontal */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+    .btn-descargar{
+        width: 100%;
+        text-align: center;
+    }
+
+    .formato-card h3{
+        font-size: 0.95rem;
+    }
+
+    .btn-descargar{
+        padding: 10px 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="contenedor-volver">
+        <a href="index.html" class="btn-volver">
+        ← Volver al Inicio
+    </a> 
+    </div>
+    
+    <section class="cartas-section">
+
+    <h2 class="titulo-cartas">Buscador de Carta</h2>
+
+    <div class="buscador">
+        <input
+            type="text"
+            id="buscarFormato"
+            placeholder="Buscar formato de carta..."
+        >
+    </div>
+
+    <div id="resultadosFormatos"></div>
+
+    <h2 class="titulo-cartas">Formatos de cartas </h2>
+
+    <div id="contenedorCartas"></div>
+
+</section>
+
+
+<script src="formatos.js"></script>
+  <script>
+
+const buscador = document.getElementById("buscarFormato");
+const resultados = document.getElementById("resultadosFormatos");
+
+function mostrarResultados(texto = ""){
+
+    resultados.innerHTML = "";
+
+    if (texto.trim() === "") {
+        return;
+    }
+
+
+    const filtrados = formatos.filter(formato =>
+        formato.nombre.toLowerCase().includes(texto.toLowerCase())
+    );
+
+    if(filtrados.length === 0){
+
+        resultados.innerHTML = `
+            <p style="text-align:center;">
+                No se encontraron formatos.
+            </p>
+        `;
+
+        return;
+    }
+
+    filtrados.forEach(formato => {
+
+        resultados.innerHTML += `
+        
+        <div class="formato-card">
+
+            <h3 id="nombres ">${formato.nombre}</h3>
+
+            <a href="${formato.link}"
+               target="_blank"
+               class="btn-descargar">
+
+                Descargar
+
+            </a>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+console.log(document.getElementById("resultadosFormatos"));
+
+buscador.addEventListener("input", () => {
+    mostrarResultados(buscador.value);
+});
+
+resultados.innerHTML = "";
+
+console.log(formatos);
+
+</script>
+
+<script>
+
+const ordenCategorias = [
+    "General",
+    "Becas",
+    "Diplomado",
+    "Nivelación",
+    "Prácticas Laborales",
+    "Reprogramaciones",
+    "Titulación"
+];
+
+function cargarCartas() {
+
+    const contenedor = document.getElementById("contenedorCartas");
+
+    contenedor.innerHTML = "";
+
+    ordenCategorias.forEach(categoria => {
+
+        const cartasCategoria = formatos.filter(
+            formato => formato.categoria === categoria
+        );
+
+        if (cartasCategoria.length === 0) return;
+
+        contenedor.innerHTML += `
+            <div class="categoria-bloque">
+
+                <h2 class="titulo-categoria">
+                    ${categoria}
+                </h2>
+
+                <div class="grupo-categoria" id="grupo-${categoria}">
+                </div>
+
+            </div>
+        `;
+
+        const grupo = document.getElementById(`grupo-${categoria}`);
+
+        cartasCategoria.forEach(formato => {
+
+            grupo.innerHTML += `
+                <div class="formato-card">
+
+                    <h3>${formato.nombre}</h3>
+
+                    <a href="${formato.link}"
+                       target="_blank"
+                       class="btn-descargar">
+
+                        Descargar
+
+                    </a>
+
+                </div>
+            `;
+
+        });
+
+    });
+
+}
+
+cargarCartas();
+
+</script>
+
+</body>
+</html>
