@@ -182,10 +182,28 @@
 
   .section-title{
       font-size:2.5rem;
-      color:var(--naranja);
+      
       margin-bottom:30px;
       text-align:center;
   }
+
+  select {
+    width: 100%;
+    padding: 12px 15px;
+    color: rgb(121, 120, 120);
+    border: 1px solid #0c0c0f;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #2a2a38;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+select:focus {
+    border-color: #610251;
+    box-shadow: 0 0 0 3px rgba(97, 2, 81, 0.15);
+}
 
   .cards{
       display:grid;
@@ -645,9 +663,15 @@ form{
         <input type="text" name="Celular" placeholder="Tu Número de Whatsapp (opcional)">
       </div>
 
-      <div class="input-group">
-        <input type="text" name="Carrera" placeholder="Carrera" required >
-      </div>
+      <select class="input-group" id="carrera" name="carrera" required>
+    <option value="" selected disabled>Seleccione una carrera</option>
+    <option value="ING. DE SISTEMAS">ING. DE SISTEMAS</option>
+    <option value="ING. EN DISEÑO Y ANIMACIÓN DIGITAL">ING. EN DISEÑO Y ANIMACIÓN DIGITAL</option>
+    <option value="ING. EN TELECOMUNICACIONES">ING. EN TELECOMUNICACIONES</option>
+    <option value="ING. EN CIENCIAS DE LA COMPUTACIÓN">ING. EN CIENCIAS DE LA COMPUTACIÓN</option>
+    <option value="ING. EN CIBERSEGURIDAD">ING. EN CIBERSEGURIDAD</option>
+    <option value="ING. EN TECNOLOGÍAS DE LA INFORMACIÓN Y SEGURIDAD">ING. EN TECNOLOGÍAS DE LA INFORMACIÓN Y SEGURIDAD</option>
+</select>
 
       <div class="input-group">
         <input type="text" name="Asunto" placeholder="Asunto" required>
